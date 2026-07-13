@@ -9,167 +9,89 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0E2036;
-    --navy-2:#16314F;
-    --gold:#C79A3F;
-    --gold-light:#E7C97C;
-    --cream:#F6F1E6;
-    --paper:#FBF8F1;
-    --land:#3E6249;
-    --ink:#1B1B18;
-    --line: rgba(199,154,63,0.35);
+    --navy:#0E2036; --navy-2:#16314F; --gold:#C79A3F; --gold-light:#E7C97C;
+    --cream:#F6F1E6; --paper:#FBF8F1; --ink:#1B1B18; --line:rgba(199,154,63,0.35);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  body{
-    font-family:'Manrope', sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    overflow-x:hidden;
-  }
-  h1,h2,h3,.display{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
-  }
+  body{font-family:'Manrope',sans-serif; background:var(--paper); color:var(--ink); overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Fraunces',serif; font-weight:600; letter-spacing:-0.01em;}
   a{text-decoration:none; color:inherit;}
   img{max-width:100%; display:block;}
   .container{max-width:1180px; margin:0 auto; padding:0 28px;}
-  .eyebrow{
-    text-transform:uppercase;
-    letter-spacing:0.18em;
-    font-size:12.5px;
-    font-weight:700;
-    color:var(--gold);
-  }
+  .eyebrow{text-transform:uppercase; letter-spacing:0.18em; font-size:12.5px; font-weight:700; color:var(--gold);}
+  ul{list-style:none;}
 
-  /* ===== NAV ===== */
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
     display:flex; align-items:center; justify-content:space-between;
-    padding:14px 32px;
-    background:rgba(14,32,54,0.72);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(231,201,124,0.18);
-    transition:background .3s;
+    padding:10px 32px; background:rgba(251,248,241,0.95); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
   }
-  .brand{display:flex; align-items:center; gap:12px;}
-  .brand img{height:52px; width:auto;}
-  .brand-text{color:var(--paper); line-height:1.05;}
-  .brand-text .n1{font-family:'Fraunces',serif; font-size:19px; letter-spacing:0.03em; font-weight:600;}
-  .brand-text .n2{font-size:9.5px; letter-spacing:0.22em; color:var(--gold-light); text-transform:uppercase;}
-  nav ul{display:flex; gap:30px; list-style:none;}
-  nav a{color:var(--paper); font-size:14px; font-weight:600; opacity:0.9;}
-  nav a:hover{color:var(--gold-light);}
-  .nav-cta{
-    background:var(--gold); color:var(--navy)!important; padding:10px 20px;
-    border-radius:2px; font-weight:800; font-size:13px; letter-spacing:0.03em;
-  }
-  .menu-toggle{display:none; color:var(--paper); font-size:26px; cursor:pointer; background:none; border:none;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand img{height:56px; width:auto;}
+  nav ul{display:flex; gap:30px;}
+  nav a{color:var(--navy); font-size:14px; font-weight:700;}
+  nav a:hover{color:var(--gold);}
+  .nav-cta{background:var(--navy); color:var(--paper)!important; padding:11px 22px; border-radius:2px; font-weight:800; font-size:13px;}
+  .menu-toggle{display:none; font-size:26px; background:none; border:none; color:var(--navy);}
 
-  /* ===== HERO ===== */
-  .hero{
-    position:relative; height:100vh; min-height:640px;
-    display:flex; align-items:center; justify-content:center;
-    overflow:hidden;
-  }
-  .hero-slide{
-    position:absolute; inset:0; background-size:cover; background-position:center;
-    opacity:0; transition:opacity 1.8s ease-in-out;
-  }
+  .hero{position:relative; min-height:100vh; display:flex; align-items:center; padding-top:110px; padding-bottom:60px; overflow:hidden;}
+  .hero-slide{position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity 1.8s ease-in-out;}
   .hero-slide.active{opacity:1;}
-  .hero::after{
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(10,20,35,0.72) 0%, rgba(10,20,35,0.45) 40%, rgba(10,20,35,0.85) 100%);
-    z-index:1;
-  }
-  .hero-content{position:relative; z-index:2; text-align:center; color:var(--paper); padding:0 20px;}
-  .hero-logo{width:150px; height:auto; margin:0 auto 22px; filter:drop-shadow(0 8px 30px rgba(0,0,0,0.45));}
+  .hero::after{content:''; position:absolute; inset:0; background:linear-gradient(100deg, rgba(10,20,35,0.92) 30%, rgba(10,20,35,0.55) 100%); z-index:1;}
+  .hero-content{position:relative; z-index:2; color:var(--paper); max-width:640px;}
   .hero-content .eyebrow{color:var(--gold-light); margin-bottom:14px;}
-  .hero-content h1{
-    font-size:clamp(38px, 6vw, 74px);
-    line-height:1.02;
-    margin-bottom:18px;
-  }
+  .hero-content h1{font-size:clamp(34px,5vw,58px); line-height:1.08; margin-bottom:18px;}
   .hero-content h1 span{color:var(--gold-light); font-style:italic;}
-  .hero-sub{
-    max-width:560px; margin:0 auto 34px; font-size:16.5px; line-height:1.6; color:rgba(251,248,241,0.88);
-  }
-  .hero-btns{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
-  .btn{
-    padding:15px 30px; border-radius:2px; font-weight:700; font-size:14.5px;
-    display:inline-flex; align-items:center; gap:10px; letter-spacing:0.02em;
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
+  .hero-sub{font-size:16.5px; line-height:1.6; color:rgba(251,248,241,0.85); margin-bottom:26px;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:26px;}
+  .tag-row span{border:1px solid rgba(231,201,124,0.5); color:var(--gold-light); font-size:12.5px; font-weight:700; padding:7px 14px; border-radius:20px;}
+  .feat-row{display:flex; flex-wrap:wrap; gap:22px; margin-bottom:30px;}
+  .feat-row div{font-size:13.5px; color:rgba(251,248,241,0.9); display:flex; align-items:center; gap:8px; font-weight:600;}
+  .feat-row div::before{content:'✓'; color:var(--gold-light); font-weight:800;}
+  .price-badge{display:inline-block; background:var(--gold); color:var(--navy); font-weight:800; padding:12px 22px; margin-bottom:26px; font-size:15px;}
+  .hero-btns{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{padding:15px 28px; border-radius:2px; font-weight:700; font-size:14px; display:inline-flex; align-items:center; gap:9px; transition:transform .25s ease, box-shadow .25s ease;}
   .btn-gold{background:var(--gold); color:var(--navy);}
   .btn-outline{border:1.5px solid rgba(251,248,241,0.55); color:var(--paper);}
   .btn:hover{transform:translateY(-2px);}
   .btn-gold:hover{box-shadow:0 10px 26px rgba(199,154,63,0.4);}
 
-  .scroll-cue{
-    position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
-    z-index:2; color:var(--gold-light); font-size:11px; letter-spacing:0.2em;
-    text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:8px;
-  }
-  .scroll-cue::after{
-    content:''; width:1px; height:36px; background:linear-gradient(var(--gold-light), transparent);
-    animation:cue 1.8s infinite;
-  }
-  @keyframes cue{0%{opacity:0.2;}50%{opacity:1;}100%{opacity:0.2;}}
-
-  /* ===== MARQUEE STRIP ===== */
-  .strip{
-    background:var(--navy); color:var(--gold-light);
-    padding:14px 0; overflow:hidden; white-space:nowrap; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  }
+  .strip{background:var(--navy); color:var(--gold-light); padding:14px 0; overflow:hidden; white-space:nowrap; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .strip-track{display:inline-block; animation:scroll-left 26s linear infinite; font-size:13px; letter-spacing:0.14em; font-weight:700; text-transform:uppercase;}
   .strip-track span{margin:0 26px; opacity:0.9;}
   @keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-  /* ===== SECTION GENERIC ===== */
   section{padding:100px 0;}
-  .section-head{max-width:640px; margin-bottom:56px;}
-  .section-head h2{font-size:clamp(30px,4vw,44px); margin-top:12px; color:var(--navy);}
-  .section-head p{margin-top:16px; font-size:16px; line-height:1.7; color:#4a4a44;}
+  .section-head{max-width:640px; margin-bottom:50px;}
+  .section-head h2{font-size:clamp(28px,4vw,42px); margin-top:12px; color:var(--navy);}
+  .section-head p{margin-top:16px; font-size:15.5px; line-height:1.7; color:#4a4a44;}
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
 
-  /* ===== ABOUT ===== */
   .about{background:var(--paper);}
-  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;}
-  .about-copy p{font-size:16px; line-height:1.85; color:#3c3c36; margin-bottom:18px;}
+  .about-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center;}
+  .about-copy p{font-size:15.5px; line-height:1.85; color:#3c3c36; margin-bottom:18px;}
+  .check-list{display:flex; flex-wrap:wrap; gap:14px; margin-top:20px;}
+  .check-list li{background:var(--cream); border:1px solid var(--line); padding:10px 16px; font-size:13.5px; font-weight:700; color:var(--navy);}
+  .check-list li::before{content:'✔ '; color:var(--gold);}
   .about-visual{position:relative;}
-  .plot-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:6px;
-    border:1.5px solid var(--gold); padding:16px; background:var(--navy);
-  }
-  .plot-cell{
-    aspect-ratio:1; background:rgba(231,201,124,0.12); border:1px solid rgba(231,201,124,0.35);
-    display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif;
-    color:var(--gold-light); font-size:12px;
-  }
+  .plot-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; border:1.5px solid var(--gold); padding:16px; background:var(--navy);}
+  .plot-cell{aspect-ratio:1; background:rgba(231,201,124,0.12); border:1px solid rgba(231,201,124,0.35); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; color:var(--gold-light); font-size:12px;}
   .plot-cell.filled{background:var(--gold); color:var(--navy); font-weight:700;}
-  .about-tag{
-    position:absolute; bottom:-18px; left:-18px; background:var(--gold); color:var(--navy);
-    padding:14px 20px; font-weight:800; font-size:13px; letter-spacing:0.02em; max-width:200px;
-    box-shadow:0 14px 30px rgba(0,0,0,0.18);
-  }
+  .about-tag{position:absolute; bottom:-18px; left:-18px; background:var(--gold); color:var(--navy); padding:14px 20px; font-weight:800; font-size:13px; max-width:200px; box-shadow:0 14px 30px rgba(0,0,0,0.18);}
 
-  /* ===== FEATURES ===== */
-  .features{background:var(--navy); color:var(--paper); position:relative;}
-  .features::before{
-    content:''; position:absolute; inset:0; opacity:0.05;
-    background-image:repeating-linear-gradient(0deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px),
-                      repeating-linear-gradient(90deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px);
-  }
-  .features .section-head{position:relative; z-index:1;}
-  .features .section-head h2{color:var(--paper);}
-  .features .section-head p{color:rgba(251,248,241,0.75);}
-  .feat-grid{position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(231,201,124,0.25); border:1px solid rgba(231,201,124,0.25);}
-  .feat-card{background:var(--navy); padding:34px 28px;}
-  .feat-num{font-family:'Fraunces',serif; color:var(--gold); font-size:13px; margin-bottom:16px; letter-spacing:0.05em;}
-  .feat-card h3{font-size:19px; color:var(--paper); margin-bottom:10px; font-weight:600;}
-  .feat-card p{font-size:14px; line-height:1.65; color:rgba(251,248,241,0.68);}
+  .facilities{background:var(--navy); color:var(--paper); position:relative;}
+  .facilities::before{content:''; position:absolute; inset:0; opacity:0.05; background-image:repeating-linear-gradient(0deg,var(--gold) 0,var(--gold) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 1px,transparent 1px,transparent 60px);}
+  .facilities .section-head{position:relative; z-index:1;}
+  .facilities .section-head h2{color:var(--paper);}
+  .facilities .section-head p{color:rgba(251,248,241,0.75);}
+  .fac-grid{position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(231,201,124,0.25); border:1px solid rgba(231,201,124,0.25);}
+  .fac-card{background:var(--navy); padding:30px 26px;}
+  .fac-num{font-family:'Fraunces',serif; color:var(--gold); font-size:13px; margin-bottom:14px;}
+  .fac-card h3{font-size:18px; color:var(--paper); margin-bottom:8px; font-weight:600;}
+  .fac-card p{font-size:13.5px; line-height:1.6; color:rgba(251,248,241,0.68);}
 
-  /* ===== GALLERY ===== */
   .gallery{background:var(--cream);}
   .gal-note{background:rgba(199,154,63,0.12); border:1px solid var(--line); padding:12px 18px; font-size:13.5px; color:#5a4a22; margin-bottom:40px; max-width:640px;}
   .gal-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
@@ -177,64 +99,72 @@
   .gal-item:nth-child(1){grid-row:span 2; aspect-ratio:auto;}
   .gal-item img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
   .gal-item:hover img{transform:scale(1.06);}
-  .gal-cap{
-    position:absolute; left:0; right:0; bottom:0; padding:14px 16px;
-    background:linear-gradient(0deg, rgba(14,32,54,0.85), transparent);
-    color:var(--paper); font-size:12.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
-  }
+  .gal-cap{position:absolute; left:0; right:0; bottom:0; padding:14px 16px; background:linear-gradient(0deg,rgba(14,32,54,0.85),transparent); color:var(--paper); font-size:12.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;}
 
-  /* ===== APPROVED BADGE STRIP ===== */
-  .approved{
-    background:var(--gold); color:var(--navy); padding:48px 0;
-  }
+  .approved{background:var(--gold); color:var(--navy); padding:44px 0;}
   .approved .container{display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;}
   .approved-left{display:flex; align-items:center; gap:22px;}
-  .approved-badge{
-    width:78px; height:78px; border-radius:50%; border:2px solid var(--navy);
-    display:flex; align-items:center; justify-content:center; flex-direction:column;
-    font-family:'Fraunces',serif; font-weight:700; font-size:11px; text-align:center; flex-shrink:0;
-  }
-  .approved h3{font-size:24px; margin-bottom:4px;}
-  .approved p{font-size:14px; opacity:0.85;}
+  .approved-badge{width:76px; height:76px; border-radius:50%; border:2px solid var(--navy); display:flex; align-items:center; justify-content:center; flex-direction:column; font-family:'Fraunces',serif; font-weight:700; font-size:11px; text-align:center; flex-shrink:0;}
+  .approved h3{font-size:22px; margin-bottom:4px;}
+  .approved p{font-size:13.5px; opacity:0.85;}
 
-  /* ===== CONTACT ===== */
   .contact{background:var(--navy); color:var(--paper);}
   .contact .section-head h2{color:var(--paper);}
   .contact .section-head p{color:rgba(251,248,241,0.75);}
   .owner-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:50px;}
-  .owner-card{
-    background:rgba(251,248,241,0.04); border:1px solid rgba(231,201,124,0.28);
-    padding:32px; position:relative;
-  }
+  .owner-card{background:rgba(251,248,241,0.04); border:1px solid rgba(231,201,124,0.28); padding:30px; position:relative;}
   .owner-role{font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:10px;}
-  .owner-name{font-family:'Fraunces',serif; font-size:24px; margin-bottom:18px;}
+  .owner-name{font-family:'Fraunces',serif; font-size:22px; margin-bottom:18px;}
   .owner-links{display:flex; gap:12px; flex-wrap:wrap;}
-  .owner-links a{
-    display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:700;
-    padding:10px 16px; border:1px solid rgba(231,201,124,0.4); border-radius:2px;
-  }
+  .owner-links a{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; padding:10px 16px; border:1px solid rgba(231,201,124,0.4); border-radius:2px;}
   .owner-links a.wa{background:#25D366; color:#0E2036; border-color:#25D366;}
   .owner-links a:hover{background:var(--gold-light); color:var(--navy); border-color:var(--gold-light);}
-
-  .contact-bottom{display:grid; grid-template-columns:1fr 1fr; gap:24px; border-top:1px solid rgba(231,201,124,0.2); padding-top:36px;}
+  .contact-bottom{display:grid; grid-template-columns:1fr 1fr; gap:24px; border-top:1px solid rgba(231,201,124,0.2); padding-top:34px;}
   .cb-block h4{font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:10px;}
-  .cb-block p, .cb-block a{font-size:15px; line-height:1.7; color:rgba(251,248,241,0.85);}
+  .cb-block p, .cb-block a{font-size:14.5px; line-height:1.7; color:rgba(251,248,241,0.85);}
 
-  footer{background:#0A1626; color:rgba(251,248,241,0.5); padding:26px 0; font-size:12.5px;}
+  footer{background:#0A1626; color:rgba(251,248,241,0.5); padding:24px 0; font-size:12.5px;}
   footer .container{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 
-  .wa-float{
-    position:fixed; bottom:24px; right:24px; z-index:200;
-    width:58px; height:58px; border-radius:50%; background:#25D366;
-    display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(0,0,0,0.3);
-  }
-  .wa-float svg{width:28px; height:28px;}
+  .wa-float{position:fixed; bottom:24px; right:24px; z-index:200; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(0,0,0,0.3);}
+  .wa-float svg{width:27px; height:27px;}
 
-  @media (max-width: 900px){
-    nav, .nav-cta{display:none;}
-    .menu-toggle{display:block;}
-    .about-grid, .owner-grid, .contact-bottom{grid-template-columns:1fr;}
-    .feat-grid{grid-template-columns:1fr;}
+  .call-float{position:fixed; bottom:24px; right:90px; z-index:200; width:56px; height:56px; border-radius:50%; background:var(--gold); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(0,0,0,0.3);}
+  .call-float svg{width:24px; height:24px;}
+
+  .sticky-call-bar{display:none;}
+  @media (max-width:900px){
+    .sticky-call-bar{
+      display:flex; position:fixed; bottom:0; left:0; right:0; z-index:199;
+      background:var(--navy); border-top:1px solid var(--line);
+    }
+    .sticky-call-bar a{flex:1; text-align:center; padding:15px 0; font-weight:800; font-size:14px;}
+    .sticky-call-bar a.call{background:var(--gold); color:var(--navy);}
+    .sticky-call-bar a.wa{background:#25D366; color:#0E2036;}
+    .wa-float,.call-float{bottom:78px;}
+    body{padding-bottom:54px;}
+  }
+
+  .avatar{
+    width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:var(--navy); font-family:'Fraunces',serif; font-weight:700; font-size:22px;
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px; flex-shrink:0;
+  }
+  .owner-top{display:flex; align-items:center; gap:16px; margin-bottom:6px;}
+  .owner-top .avatar{margin-bottom:0;}
+
+  .callback{background:var(--cream);}
+  .cb-form{display:grid; grid-template-columns:1fr 1fr auto; gap:12px; max-width:720px;}
+  .cb-form input{padding:15px 16px; border:1px solid var(--line); background:var(--paper); font-size:14.5px; font-family:'Manrope',sans-serif;}
+  .cb-form input:focus{outline:2px solid var(--gold);}
+  .cb-form button{background:var(--navy); color:var(--paper); border:none; padding:15px 26px; font-weight:800; font-size:14px; cursor:pointer;}
+  .cb-note{font-size:12.5px; color:#6a6a60; margin-top:10px;}
+  @media (max-width:700px){.cb-form{grid-template-columns:1fr;}}
+
+  @media (max-width:900px){
+    nav,.nav-cta{display:none;} .menu-toggle{display:block;}
+    .about-grid,.owner-grid,.contact-bottom{grid-template-columns:1fr;}
+    .fac-grid{grid-template-columns:1fr;}
     .gal-grid{grid-template-columns:repeat(2,1fr);}
     .gal-item:nth-child(1){grid-row:span 1;}
     .approved .container{flex-direction:column; text-align:center;}
@@ -244,22 +174,16 @@
 <body>
 
 <header>
-  <div class="brand">
-    <img src="images/logo.png" alt="Shree Developers logo">
-    <div class="brand-text">
-      <div class="n1">Shree Developers</div>
-      <div class="n2">Building Trust, Creating Futures</div>
-    </div>
-  </div>
+  <div class="brand"><img src="images/logo.png" alt="Shree Developers logo"></div>
   <nav>
     <ul>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#features">Why Us</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#gallery">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <a class="nav-cta" href="#contact">Book a Plot</a>
+  <a class="nav-cta" href="https://wa.me/917909917343?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20Shree%20Developers%20plots." target="_blank">Enquire Now</a>
   <button class="menu-toggle">&#9776;</button>
 </header>
 
@@ -268,29 +192,34 @@
   <div class="hero-slide" style="background-image:url('images/hero3.jpg')"></div>
   <div class="hero-slide" style="background-image:url('images/hero4.jpg')"></div>
   <div class="hero-slide" style="background-image:url('images/hero2.jpg')"></div>
-  <div class="hero-content">
-    <img src="images/logo.png" class="hero-logo" alt="Shree Developers">
-    <div class="eyebrow">RL &middot; NMRDA Approved Plots</div>
-    <h1>Your Plot, <span>Your Dream</span><br>We Build It Together</h1>
-    <p class="hero-sub">Legally clear, NMRDA-approved plots at a prime location — developed roads, water, electricity and open green spaces, ready for your future.</p>
-    <div class="hero-btns">
-      <a class="btn btn-gold" href="https://wa.me/917909917343?text=Hi%2C%20I%27m%20interested%20in%20Shree%20Developers%20plots." target="_blank">Chat on WhatsApp</a>
-      <a class="btn btn-outline" href="#gallery">View Layout</a>
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">RL &middot; NMRDA Approved Plots</div>
+      <h1>Build Your Dream<br>on <span>Solid Ground</span></h1>
+      <p class="hero-sub">Shree Developers — legally clear, NMRDA-approved plots in Nagpur, backed by developed roads, water and power infrastructure from day one.</p>
+      <div class="tag-row">
+        <span>New Manish Nagar</span><span>RTO Society</span><span>Nagpur</span>
+      </div>
+      <div class="feat-row">
+        <div>NMRDA Approved Layout</div>
+        <div>Clear &amp; Legal Title</div>
+        <div>Developed Roads, Water &amp; Power</div>
+      </div>
+      <div class="hero-btns">
+        <a class="btn btn-gold" href="tel:+917909917343">&#9742; Call Now &middot; 79099 17343</a>
+        <a class="btn btn-outline" href="https://wa.me/917909917343?text=Hi%2C%20I%27d%20like%20to%20book%20a%20site%20visit." target="_blank">Book a Site Visit</a>
+      </div>
+      <p style="margin-top:16px; font-size:13px; color:rgba(251,248,241,0.65);">Calls are answered directly by our directors — no call centre, no waiting.</p>
     </div>
   </div>
-  <div class="scroll-cue">Scroll</div>
 </section>
 
 <div class="strip">
   <div class="strip-track">
-    <span>Prime Location</span><span>&#9670;</span>
-    <span>Legal &amp; Clear Title</span><span>&#9670;</span>
-    <span>High Investment Value</span><span>&#9670;</span>
-    <span>RL NMRDA Approved</span><span>&#9670;</span>
-    <span>Prime Location</span><span>&#9670;</span>
-    <span>Legal &amp; Clear Title</span><span>&#9670;</span>
-    <span>High Investment Value</span><span>&#9670;</span>
-    <span>RL NMRDA Approved</span><span>&#9670;</span>
+    <span>Prime Location</span><span>&#9670;</span><span>Legal &amp; Clear Title</span><span>&#9670;</span>
+    <span>High Investment Value</span><span>&#9670;</span><span>RL NMRDA Approved</span><span>&#9670;</span>
+    <span>Prime Location</span><span>&#9670;</span><span>Legal &amp; Clear Title</span><span>&#9670;</span>
+    <span>High Investment Value</span><span>&#9670;</span><span>RL NMRDA Approved</span><span>&#9670;</span>
   </div>
 </div>
 
@@ -298,9 +227,14 @@
   <div class="container about-grid">
     <div class="about-copy">
       <div class="eyebrow">About Us</div>
-      <h2>A new name in Nagpur's plotting business, built on an old promise</h2>
-      <p>Shree Developers is founded on a simple idea: land ownership should be transparent, secure and within reach. Every plot we release is RL NMRDA approved, carries a clear legal title, and sits within a layout planned for developed roads, water and electricity connections, cemented internal roads, and open green space.</p>
-      <p>We're a new company — and we'd rather earn your trust with paperwork and site visits than promises. Come walk the layout, verify the approvals, and decide for yourself.</p>
+      <h2>Shree Developers — Your Trust, Our Responsibility</h2>
+      <p>We're a new plotting company in Nagpur, built on a simple idea: land ownership should be transparent, secure and within everyone's reach. Every layout we bring to market is RL NMRDA approved and backed by a clear legal title.</p>
+      <p>Being new means we don't have ten years of testimonials to lean on — so we'd rather earn your trust with paperwork and a site visit than promises. Walk the layout, check the approvals yourself, then decide.</p>
+      <ul class="check-list">
+        <li>RL NMRDA Approved</li>
+        <li>Clear Title Lands</li>
+        <li>End-to-End Support</li>
+      </ul>
     </div>
     <div class="about-visual">
       <div class="plot-grid">
@@ -314,20 +248,20 @@
   </div>
 </section>
 
-<section class="features" id="features">
+<section class="facilities" id="facilities">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Why Choose Us</div>
+      <div class="eyebrow">Our Premium Facilities</div>
       <h2>Everything a plot buyer checks, already in place</h2>
       <p>Six essentials, verified before we release a single plot for booking.</p>
     </div>
-    <div class="feat-grid">
-      <div class="feat-card"><div class="feat-num">01</div><h3>Developed Road Connectivity</h3><p>Every plot is accessed via a planned internal road network connecting to the main highway.</p></div>
-      <div class="feat-card"><div class="feat-num">02</div><h3>Water Supply</h3><p>Layout-wide provision for a reliable water connection to each individual plot.</p></div>
-      <div class="feat-card"><div class="feat-num">03</div><h3>Electricity Supply</h3><p>Power infrastructure planned and provisioned across the entire layout.</p></div>
-      <div class="feat-card"><div class="feat-num">04</div><h3>Cemented Roads</h3><p>Internal roads are cemented, not kutcha — built to last, not just to sell.</p></div>
-      <div class="feat-card"><div class="feat-num">05</div><h3>Green &amp; Open Space</h3><p>Landscaped open areas and greenery set aside within the layout, not an afterthought.</p></div>
-      <div class="feat-card"><div class="feat-num">06</div><h3>Secured Premises</h3><p>A boundaried, secured layout designed with residents' safety in mind.</p></div>
+    <div class="fac-grid">
+      <div class="fac-card"><div class="fac-num">01</div><h3>Developed Road Connectivity</h3><p>Every plot is accessed via a planned internal road network connecting to the main highway.</p></div>
+      <div class="fac-card"><div class="fac-num">02</div><h3>Underground Water Line</h3><p>Layout-wide provision for a reliable water connection to each individual plot.</p></div>
+      <div class="fac-card"><div class="fac-num">03</div><h3>Underground Electricity</h3><p>Power infrastructure planned and provisioned across the entire layout.</p></div>
+      <div class="fac-card"><div class="fac-num">04</div><h3>Cement Concrete Roads</h3><p>Internal roads are cemented, not kutcha — built to last, not just to sell.</p></div>
+      <div class="fac-card"><div class="fac-num">05</div><h3>Garden &amp; Plantation</h3><p>Landscaped open areas and greenery set aside within the layout, not an afterthought.</p></div>
+      <div class="fac-card"><div class="fac-num">06</div><h3>Storm Line &amp; Drainage</h3><p>Proper storm-water and drainage lines planned into the layout from the start.</p></div>
     </div>
   </div>
 </section>
@@ -361,6 +295,21 @@
   </div>
 </section>
 
+<section class="callback">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:30px;">
+      <div class="eyebrow">Request a Call Back</div>
+      <h2>Can't talk right now? We'll call you.</h2>
+    </div>
+    <form class="cb-form" id="callbackForm">
+      <input type="text" id="cbName" placeholder="Your Name" required>
+      <input type="tel" id="cbPhone" placeholder="Your Phone Number" pattern="[0-9]{10}" required>
+      <button type="submit">Request Call Back</button>
+    </form>
+    <p class="cb-note">Submitting opens WhatsApp with your details pre-filled to our director — you send it, we call you back within the day.</p>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-head">
@@ -368,26 +317,34 @@
       <h2>Book a site visit or ask us anything</h2>
       <p>Reach either of our directors directly — by call or WhatsApp.</p>
     </div>
-
     <div class="owner-grid">
       <div class="owner-card">
-        <div class="owner-role">Director</div>
-        <div class="owner-name">Mona Purshottam Nagpure</div>
-        <div class="owner-links">
+        <div class="owner-top">
+          <div class="avatar">MN</div>
+          <div>
+            <div class="owner-role">Director</div>
+            <div class="owner-name" style="margin-bottom:0;">Mona Purshottam Nagpure</div>
+          </div>
+        </div>
+        <div class="owner-links" style="margin-top:16px;">
           <a class="wa" href="https://wa.me/917909917343?text=Hi%20Mona%2C%20I%27d%20like%20to%20know%20more%20about%20Shree%20Developers%20plots." target="_blank">WhatsApp Chat</a>
           <a href="tel:+917909917343">Call &middot; 79099 17343</a>
         </div>
       </div>
       <div class="owner-card">
-        <div class="owner-role">Director</div>
-        <div class="owner-name">Ashwini Rahul Wagh</div>
-        <div class="owner-links">
+        <div class="owner-top">
+          <div class="avatar">AW</div>
+          <div>
+            <div class="owner-role">Director</div>
+            <div class="owner-name" style="margin-bottom:0;">Ashwini Rahul Wagh</div>
+          </div>
+        </div>
+        <div class="owner-links" style="margin-top:16px;">
           <a class="wa" href="https://wa.me/917448210439?text=Hi%20Ashwini%2C%20I%27d%20like%20to%20know%20more%20about%20Shree%20Developers%20plots." target="_blank">WhatsApp Chat</a>
           <a href="tel:+917448210439">Call &middot; 74482 10439</a>
         </div>
       </div>
     </div>
-
     <div class="contact-bottom">
       <div class="cb-block">
         <h4>Office / Inauguration Venue</h4>
@@ -407,13 +364,21 @@
 <footer>
   <div class="container">
     <div>&copy; 2026 Shree Developers. All rights reserved.</div>
-    <div>Building Trust, Creating Futures</div>
+    <div>Your Trust, Our Responsibility</div>
   </div>
 </footer>
 
+<a class="call-float" href="tel:+917909917343" aria-label="Call Now">
+  <svg viewBox="0 0 24 24" fill="#0E2036"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+</a>
 <a class="wa-float" href="https://wa.me/917909917343" target="_blank" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 32 32" fill="#0E2036"><path d="M16.001 3C9.098 3 3.5 8.598 3.5 15.5c0 2.42.674 4.686 1.845 6.617L3 29l7.06-2.318A12.44 12.44 0 0016 28c6.903 0 12.5-5.598 12.5-12.5S22.903 3 16.001 3zm0 22.6a10.06 10.06 0 01-5.14-1.408l-.369-.219-4.19 1.375 1.398-4.083-.24-.42A10.06 10.06 0 015.9 15.5c0-5.577 4.524-10.1 10.1-10.1S26.1 9.923 26.1 15.5 21.578 25.6 16.001 25.6zm5.542-7.556c-.303-.152-1.792-.884-2.07-.985-.278-.101-.48-.152-.682.152-.202.303-.784.985-.961 1.187-.177.202-.354.227-.657.076-.303-.152-1.278-.471-2.435-1.504-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.137-.136.303-.354.455-.531.152-.177.202-.303.303-.505.101-.202.05-.379-.025-.531-.076-.152-.682-1.646-.935-2.253-.246-.591-.497-.511-.682-.52-.177-.008-.379-.01-.581-.01-.202 0-.531.076-.809.379-.278.303-1.06 1.036-1.06 2.53 0 1.494 1.086 2.937 1.238 3.14.152.202 2.138 3.266 5.181 4.579.724.312 1.288.499 1.729.639.726.231 1.386.198 1.908.12.582-.087 1.792-.733 2.045-1.44.253-.708.253-1.314.177-1.44-.076-.127-.278-.202-.581-.354z"/></svg>
 </a>
+
+<div class="sticky-call-bar">
+  <a class="call" href="tel:+917909917343">&#9742; Call Now</a>
+  <a class="wa" href="https://wa.me/917909917343?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Shree%20Developers%20plots." target="_blank">WhatsApp</a>
+</div>
 
 <script>
   const slides = document.querySelectorAll('.hero-slide');
@@ -423,6 +388,14 @@
     cur = (cur + 1) % slides.length;
     slides[cur].classList.add('active');
   }, 4500);
+
+  document.getElementById('callbackForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('cbName').value.trim();
+    const phone = document.getElementById('cbPhone').value.trim();
+    const msg = encodeURIComponent(`Hi, I'm ${name} (${phone}). Please call me back regarding Shree Developers plots.`);
+    window.open(`https://wa.me/917909917343?text=${msg}`, '_blank');
+  });
 </script>
 
 </body>
